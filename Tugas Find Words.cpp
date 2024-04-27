@@ -9,7 +9,6 @@ bool searchWord(vector<string>& matrix, string word) {
     int cols = matrix[0].size();
     int len = word.size();
 
-    // Cari secara horizontal
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j <= cols - len; ++j) {
             if (matrix[i].substr(j, len) == word)
@@ -17,7 +16,6 @@ bool searchWord(vector<string>& matrix, string word) {
         }
     }
 
-    // Cari secara vertikal
     for (int j = 0; j < cols; ++j) {
         for (int i = 0; i <= rows - len; ++i) {
             string colString = "";
@@ -29,7 +27,6 @@ bool searchWord(vector<string>& matrix, string word) {
         }
     }
 
-    // Cari secara diagonal (maju)
     for (int i = 0; i <= rows - len; ++i) {
         for (int j = 0; j <= cols - len; ++j) {
             string diagString = "";
@@ -41,7 +38,6 @@ bool searchWord(vector<string>& matrix, string word) {
         }
     }
 
-    // Cari secara diagonal (mundur)
     for (int i = 0; i <= rows - len; ++i) {
         for (int j = len - 1; j < cols; ++j) {
             string diagString = "";
